@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Just Push It</title>
+
+		<meta name="description" content="A Flatiron School Lecture on Faye and Push Notifications">
+		<meta name="author" content="Joe Burgess">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="css/fontello.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Push Notification</h1>
+					<h3></h3>
+					<p>
+          <small>Created by Joe Burgess</small>
+					</p>
+				</section>
+
+				<section>
+          <h1>Who Am I</h1>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+          <h2>So What Is Push?</h2>
+          <p>
+          It's the final frontier of AJAX. 
+          </p>
+				</section>
+
+				<section>
+          <h2>Why Not Just Poll</h2>
+					<p>
+          <ul>
+            <li>Peformance</li>
+            <li>Usability</li>
+            <li>Scalability</li>
+          </ul>
+					</p>
+				</section>
+
+				<section>
+          <h2>How Does It Work?</h2>
+          <ul>
+            <li>Browser keeps an open connection to a server</li>
+            <li>Used to be non standardized and hard</li>
+          </ul>
+				</section>
+
+				<section>
+          <h2>Intorducing....</h2>
+          <h1 class="fragment">WebSockets</h1>
+				</section>
+
+				<section>
+          <h2>WebSockets</h2>
+          <strong>Standarized</strong> way for bi-directional realtime
+          communication between servers
+				</section>
+
+				<section>
+          <h2>Tools Available</h2>
+          <ul>
+            <li><a href="https://github.com/simulacre/sinatra-websocket">Sinatra-WebSocket</a></li>
+            <li><a href="http://faye.jcoglan.com/">Faye</a></li>
+            <li>A ton more for every possible language/framework</li>
+          </ul>
+				</section>
+
+				<section>
+          <h2>Faye</h2>
+          <ul>
+            <li>Node.JS server</li>
+            <li>Clients for Node.JS and Rails</li>
+          </ul>
+				</section>
+
+				<section>
+          <h2>Start The Server</h2>
+          <ol>
+            <li>Install the Faye and Thin Gems</li>
+            <li>Create a rack file</li>
+            <li>Run It!</li>
+          </ol>
+				</section>
+
+				<section>
+          <h2>The Client</h2>
+          <ul>
+            <li>JS Client</li>
+            <li>Ruby Client</li>
+          </ul>
+				</section>
+
+        <section>
+          <h2>Pub/Sub</h2>
+          <p>
+          The <strong>pusher</strong> publishes a <strong>message</strong> on
+          a <strong>channel</strong>.<br /><br />
+          The <strong>subscriber</strong> subscribes to a <strong>channel</strong>.
+          </p>
+        </section>
+
+				<section>
+          <h1>Let's See It Work</h1>
+				</section>
+
+				<section>
+          <h1>Any MASSIVE GLARING Problems?</h1>
+				</section>
+
+				<section>
+					<h2>Yup</h2>
+					<p>
+          Security! Anyone can post to faye right now.<br/><br />
+          Let's write a Faye Extension
+          </p>
+				</section>
+
+        <section>
+          <h1>Any Other Problems</h1>
+        </section>
+
+        <section>
+          <h2>Yup</h2>
+          <p>
+          Order of messages is not guaranteed. 
+          <p>
+        </section>
+
+				<section>
+          <h2>Performance</h2>
+          <ul>
+            <li>Open Connection for <strong>every</strong> subscriber</li>
+            <li>Pushing Data vs. Pushing Notification</li>
+          </ul>
+				</section>
+
+				<section>
+          <h2>References</h2>
+          <ul>
+            <li><a href="http://faye.jcoglan.com/ruby.html">Faye Documentation</a></li>
+            <li><a href="http://railscasts.com/episodes/260-messaging-with-faye">Faye Railscast</a></li>
+            <li><a href="http://soa.sys-con.com/node/1315473">WebSockets Overview</a></li>
+            <li><a href="http://pusher.com/">Pusher</a></li>
+          </ul>
+				</section>
+
+
+				<section>
+					<h1>THE END</h1>
+          <ul style="list-style:none;">
+            <li><i class="icon-mail"></i><a href="mailto:joemburgess@gmail.com">joemburgess@gmail.com</a></li>
+            <li><i class="icon-github"></i><a href="https://github.com/jmburges">jmburges</a></li>
+            <li><i class="icon-twitter"></i><a href="https://twitter.com/jmburges">@jmburges</a></li>
+          
+        
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
